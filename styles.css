@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  background: #8000FF;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container geral do app */
+#container_app {
+  background: linear-gradient(to bottom, #8000FF, black 60%);
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo do app */
+#containerImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#containerImg img {
+  width: 150px;
+  box-shadow: 10px 13px 20px black;
+  border-radius: 50%; 
+  margin-bottom: 20px;
+}
+
+/* Informações da faixa */
+#faixa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#faixa h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#faixa p {
+  font-size: 1rem;
+  max-width: 80%;
+}
+
+/* Botão de play/pause */
+#botao {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#botao button {
+  color: #00ff00;
+  background: none;
+  font-size: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#botao button:hover {
+  transform: scale(1.1);
+}
+
+/* Container das músicas */
+#container_musicas {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.musicas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.musicas:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#container_musicas .musicas img {
+  width: 60px;
+  border-radius: 10px;
+}
+
+.tituloMusica {
+  color: white;
+  flex: 1;
+  margin-left: 20px;
+}
+
+.btnTocaMusica {
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.btnTocaMusica:hover {
+  color: #00ff00;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  #container_app {
+    padding: 10px;
+  }
+
+  #faixa h1 {
+    font-size: 1.5rem;
+  }
+
+  #faixa p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  #botao button {
+    font-size: 40px;
+  }
+
+  .musicas {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .musicas img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+  .tituloMusica {
+    margin-left: 0;
+  }
+
+  .btnTocaMusica {
+    font-size: 25px;
+  }
+}
+
+/* Responsividade para PC */
+@media (min-width: 769px) {
+  #container_musicas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-height: 400px;
+  }
+
+  .musicas {
+    width: 45%;
+  }
+}
